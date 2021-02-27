@@ -25,7 +25,7 @@ def generate_sudoku(mask_rate=0.5):
     mm[np.random.choice([True, False], size=m.shape, p=[mask_rate, 1 - mask_rate])] = 0
     print("\nMasked anwser:\n", mm)
     np.savetxt("./puzzle.csv", mm, "%d", delimiter=",")
-    return mm
+    return m, mm
 
 
 def solve(m):
@@ -91,18 +91,18 @@ if __name__ == "__main__":
     solved = solve(puzzle)
     check_solution(solved)
 
-    print("\nSolve in code:")
-    solve([
-        [0, 5, 0, 0, 6, 7, 9, 0, 0],
-        [0, 2, 0, 0, 0, 8, 4, 0, 0],
-        [0, 3, 0, 9, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 2, 1, 0, 4],
-        [0, 0, 0, 6, 0, 9, 0, 0, 0],
-        [0, 0, 8, 5, 0, 0, 6, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 4, 9, 0, 0, 5, 0],
-        [2, 1, 3, 7, 0, 0, 0, 0, 0]
-    ])
+    # print("\nSolve in code:")
+    # solve([
+    #     [0, 5, 0, 0, 6, 7, 9, 0, 0],
+    #     [0, 2, 0, 0, 0, 8, 4, 0, 0],
+    #     [0, 3, 0, 9, 0, 0, 0, 0, 0],
+    #     [0, 0, 0, 0, 0, 2, 1, 0, 4],
+    #     [0, 0, 0, 6, 0, 9, 0, 0, 0],
+    #     [0, 0, 8, 5, 0, 0, 6, 0, 0],
+    #     [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    #     [0, 0, 0, 4, 9, 0, 0, 5, 0],
+    #     [2, 1, 3, 7, 0, 0, 0, 0, 0]
+    # ])
 
-    print("\nSolve in csv file:")
-    solve("puzzle.csv")
+    # print("\nSolve in csv file:")
+    # solve("puzzle.csv")
