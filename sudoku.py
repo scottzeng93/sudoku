@@ -81,9 +81,11 @@ def check_solution(m):
         if no_good:
             break
     if no_good:
-        print("\nChecked: not good")
+        # print("\nChecked: not good")
+        return 0
     else:
-        print("\nChecked: OK")
+        # print("\nChecked: OK")
+        return 1
 
 
 if __name__ == "__main__":
